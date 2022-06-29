@@ -48,4 +48,5 @@ exclude:
    - Gemfile
    - Gemfile.lock
    - GeneralScene/
+   - docs/
    - NorthPondScene/
