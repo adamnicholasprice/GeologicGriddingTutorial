@@ -2,103 +2,103 @@
     "doc": "Introduction",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/01_intro.html#hello",
     "relUrl": "/01_intro.html#hello"
   },"1": {
     "doc": "Introduction",
     "title": "Introduction",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/01_intro.html",
     "relUrl": "/01_intro.html"
   },"2": {
     "doc": "Constructing refining surfaces",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/02_surfaces.html#hello",
     "relUrl": "/02_surfaces.html#hello"
   },"3": {
     "doc": "Constructing refining surfaces",
     "title": "Constructing refining surfaces",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/02_surfaces.html",
     "relUrl": "/02_surfaces.html"
   },"4": {
     "doc": "Constructing Simulation Domain",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/03_domain.html#hello",
     "relUrl": "/03_domain.html#hello"
   },"5": {
     "doc": "Constructing Simulation Domain",
     "title": "Constructing Simulation Domain",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/03_domain.html",
     "relUrl": "/03_domain.html"
   },"6": {
     "doc": "Refining simulation domain",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_refinement.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/04_refinement.html#hello",
     "relUrl": "/04_refinement.html#hello"
   },"7": {
     "doc": "Refining simulation domain",
     "title": "Refining simulation domain",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_refinement.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/04_refinement.html",
     "relUrl": "/04_refinement.html"
   },"8": {
     "doc": "Define regions and assign materials",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_defineRegions.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/05_defineRegions.html#hello",
     "relUrl": "/05_defineRegions.html#hello"
   },"9": {
     "doc": "Define regions and assign materials",
     "title": "Define regions and assign materials",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_defineRegions.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/05_defineRegions.html",
     "relUrl": "/05_defineRegions.html"
   },"10": {
     "doc": "Cleanup domain, materials, and boundary conditions",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_cleanup.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/06_cleanup.html#hello",
     "relUrl": "/06_cleanup.html#hello"
   },"11": {
     "doc": "Cleanup domain, materials, and boundary conditions",
     "title": "Cleanup domain, materials, and boundary conditions",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_cleanup.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/06_cleanup.html",
     "relUrl": "/06_cleanup.html"
   },"12": {
     "doc": "Pseudo code: General Case",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoGeneral.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/07_pseudoGeneral.html#hello",
     "relUrl": "/07_pseudoGeneral.html#hello"
   },"13": {
     "doc": "Pseudo code: General Case",
     "title": "Pseudo code: General Case",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoGeneral.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/07_pseudoGeneral.html",
     "relUrl": "/07_pseudoGeneral.html"
   },"14": {
     "doc": "Pseudo code: North Pond",
     "title": "Hello",
     "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoNorthPond.html#hello",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/07_pseudoNorthPond.html#hello",
     "relUrl": "/07_pseudoNorthPond.html#hello"
   },"15": {
     "doc": "Pseudo code: North Pond",
     "title": "Pseudo code: North Pond",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoNorthPond.html",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/07_pseudoNorthPond.html",
     "relUrl": "/07_pseudoNorthPond.html"
   },"16": {
     "doc": "About",
     "title": "About",
     "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com . You can find the source code for Minima at GitHub: jekyll / minima . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/about/",
+    "url": "http://localhost:4000/GeologicGriddingTutorial/about/",
     "relUrl": "/about/"
   }
 }
