@@ -76,13 +76,13 @@ Steps within the tutorial will be broken down by LaGriT file and have necessary 
 
 | **Extension** | **Filetype** | **Purpose** |
 | --- | --- | --- |
-| _ **\*.lgi** _ | LaGriT control file | LaGriT input control file, specifies mesh generation. |
-| _ **\*.mlgi** _ | LaGriT control file | LaGriT input control file used to specify a subroutine within \*.lgi file. |
-| _ **\*.inp** _ | AVS UCD (Unstructured Cell Data) file | Created by LaGriT and contains information about mesh objects. Can be opened in Paraview to visualize data. |
+| _ **\*.lgi** | LaGriT control file | LaGriT input control file, specifies mesh generation. |
+| _ **\*.mlgi** | LaGriT control file | LaGriT input control file used to specify a subroutine within \*.lgi file. |
+| _ **\*.inp** | AVS UCD (Unstructured Cell Data) file | Created by LaGriT and contains information about mesh objects. Can be opened in Paraview to visualize data. |
 | _ **\*.zone, \*.area, \*.stor, \*.fehmn** _ | FEHM files | LaGriT output files that are of general use but are specifically designed for the[FEHM](http://fehm.lanl.gov/) porous flow and transport code |
-| _ **outx3dgen** _ | LaGriT output file | Output file containing commands and output from commands executed in LaGriT (overwritten every time LaGriT command is called) |
-| _ **legx3dgen** _ | LaGriT log file | Log file containing commands executed in LaGriT (overwritten every time LaGriT command is called) |
-| _ **\*.csv** _ | Text file (comma separated values) | In this tutorial, these are text files containing coordinates in meters for surfaces. Columns are x, y, z coordinates respectively. |
+| _ **outx3dgen** | LaGriT output file | Output file containing commands and output from commands executed in LaGriT (overwritten every time LaGriT command is called) |
+| _ **legx3dgen** | LaGriT log file | Log file containing commands executed in LaGriT (overwritten every time LaGriT command is called) |
+| _ **\*.csv** | Text file (comma separated values) | In this tutorial, these are text files containing coordinates in meters for surfaces. Columns are x, y, z coordinates respectively. |
 
 ##
 
@@ -143,126 +143,4 @@ GeologicGriddingData/
 └── function6
 
 ```
-
-# Surfaces
-
-The first step in the construction of a simulation domain is to construct surfaces that represent geologically realistic layers. These surfaces will define boundaries that allow assignment of specific material properties and act as surfaces to refine the simulation domain. Surfaces can be constructed in LaGriT or in an outside programming language such as R, Python, or Matlab and brought into LaGritT. In both cases in this tutorial, surfaces were constructed outside of LaGriT and brought in to define mesh objects. The general steps to do this are:
-
-1. Save mesh coordinates (x,y,z) into a .csv file
-
-2. Create mesh object that has coordinate system (x and y) of desired mesh resolution (have to define if different from .csv file coordinates)
-
-3. Connect mesh objects with new coordinates in x and y.
-
-4. Read in the .csv as a mesh object into LaGriT
-
-5. Copy over z-coordinates from mesh in step 4 to connected mesh in step 2
-
-This process forces LaGriT to make the &quot;best&quot; connections within an x-y plane to begin with and then the coordinates along the z-axis with relief to be defined, thereby preventing any connections outside the plane.
-
-## Generalized Mesh
-
-## North Pond
-
-For the North Pond case, the first seven files focus on defining surfaces.
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-### 1\_price\_surf\_domain.lgi
- | _function6.csv_ | _1\_surf\_domain.inp_ |
-
-#### Overview
-
-Create mesh object surface representing North Pond bathymetry using function6.csv
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 2\_price\_surf\_mid\_grid.lgi
- | 2\_middle\_grid.csv | 2\_surf\_mid\_grid.inp |
-
-## **Overview**
-
-Create mesh object surface from trimmed area of interest created from truncated bathymetric surface (_2\_middle\_grid.csv_) representing North Pond and immediately adjacent region.
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 3\_price\_surf\_mid\_sb.lgi
- | 3\_middle\_sb.csv | 3\_surf\_mid\_sb.inp |
-
-## **Overview**
-
-Create mesh object surface from trimmed area of interest created from truncated bathymetric surface (_3\_middle\_sb.csv_) representing sediment / basement interface beneath North Pond.
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 4\_price\_surf\_flat\_zero.lgi
- | None | 4\_surf\_flat\_zero.inp |
-
-## **Overview**
-
-Construct a flat surface at z = 0 at the same spatial extent as _2\_middle\_grid.csv_.
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 5\_price\_surf\_aq100.lgi
- | 3\_surf\_mid\_sb.inp | 5\_surf\_aq100.inp |
-
-## **Overview**
-
-Construct a volume that represents a 100m thick aquifer section directly beneath North Pond.
-
-###
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 6\_price\_surf\_aq300\_1k.lgi
- | 2\_surf\_mid\_grid.inp | 6\_surf\_aq300\_1k.inp |
-
-## **Overview**
-
-## Construct a volume that represents a 900 m thick aquifer section directly beneath the region representing North Pond.
-
-| **FIlename** | **Input** | **Output** |
-| --- | --- | --- |
-|
-# 7\_price\_surf\_filt.lgi
- | 1\_surf\_domain.inp | 7\_surf\_filt\_aq100.inp |
-| 7\_surf\_filt\_aq300.inp |
-| 7\_surf\_filt\_aq600.inp |
-| 7\_surf\_filt\_aq1k.inp |
-
-## **Overview**
-
-Construct four surfaces at -100, -300,-600, and -1000m at the extent of the entire domain.
-
-# Domain
-
-[Placeholder]
-
-# Refinement
-
-[Placeholder]
-
-# Define regions
-
-[Placeholder]
-
-# Cleanup
-
-[Placeholder]
-
-# PseudoCode
-
-- General
-
-- North Pond
-
-# Links
-
-[https://lagrit.lanl.gov/docs/Tutorial.shtml](https://lagrit.lanl.gov/docs/Tutorial.shtml)
+[Constructing refining surfaces](http://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html){: .btn .btn-purple }
