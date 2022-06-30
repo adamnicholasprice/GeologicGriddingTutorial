@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: home
 title:  "Introduction"
 nav_order: 2
 has_children: true
@@ -7,15 +7,27 @@ has_children: true
 
 # Geologically Realistic Representations of Seafloor Crustal Relief and Patchy Sediment Cover
 
-Adam N. Price (adamnicholasprice@gmail.com); July 2022
+### Adam N. Price [adamnicholasprice@gmail.com] (adamnicholasprice@gmail.com);
+#### July 2022
+
 
 # Introduction
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+    1. TOC
+{:toc}
+</details>
+
 
 This tutorial is a resource that accompanies a robust set of resources including a publication, psuedo-code, github repository, and data repository for constructing a three-dimensional grid of geologically realistic representations of seafloor crustal relief. The three-dimensional simulation domain described here has been used in multiple publications focusing on the thermal and hydrogeologic regime of coupled fluxes beneath a marine sediment pond (Price et al., 2022; Price et al., in-prep).
 
 The tutorial can be broken down into a workflow consisting of 5 main sections: constructing surfaces, constructing a domain, refining the domain, defining and assigning material types to regions, and a general clean-up of the domain. There will be two examples included for each step. One example will use a general case that will introduce the concepts in a simple manner and the other example will be for construction of the North Pond domain.
 
-This tutorial will not be an exhaustive tutorial on the functionality of LaGriT as there are many examples that can be found [here](https://lanl.github.io/LaGriT/pages/tutorial/index.html). Instead, this tutorial will serve as a &quot;cookbook&quot; that allows the user to understand the steps used in construction of this simulation domain using the lessons and approaches explained below.
+This tutorial will not be an exhaustive tutorial on the functionality of LaGriT as there are many examples that can be found [here](https://lanl.github.io/LaGriT/pages/tutorial/index.html). Instead, this tutorial will serve as a &quot;cookbook"&quot"; that allows the user to understand the steps used in construction of this simulation domain using the lessons and approaches explained below.
 
 Happy gridding!
 
@@ -52,25 +64,23 @@ Throughout the document italicized words willdenote either a file name or a vari
 Code blocks will be denoted by the following style:
 
 ```
-
 Code here
 
 # Comments will be denoted with an octothorpe (pound sign)
-
 ```
 ### Commands
 In lieu of repeating this code chunk in each of the following steps in the tutorial, any LaGriT input files (.lgi) that are run in the tutorial are done so by executing the following command in the command line:
 ```
-lagrit \&lt; _filename_
+lagrit < filename
 ```
 
-This will be denoted with the phrase execute _filename.lgi_ in LaGriT.
+This will be denoted with the phrase execute *filename.lgi* in LaGriT.
 
 Steps within the tutorial will be broken down by LaGriT file and have necessary inputs and outputs specified as such:
 
-| **FIlename** | **Input** | **Output** |
+| **Filename** | **Input** | **Output** |
 | --- | --- | --- |
-| _ **filename.lgi** _ | _inputFilename_ | _outputFilename_ |
+| **filename.lgi* |*inputFilename* | *outputFilename*|
 
 ### File types
 
