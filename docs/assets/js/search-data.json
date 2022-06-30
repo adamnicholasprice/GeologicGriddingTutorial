@@ -1,13 +1,13 @@
 {"0": {
     "doc": "Introduction",
     "title": "Geologically Realistic Representations of Seafloor Crustal Relief and Patchy Sediment Cover",
-    "content": "Adam N. Price (adamnicholasprice@gmail.com); July 2022 . ",
+    "content": "Adam N. Price [adamnicholasprice@gmail.com] (adamnicholasprice@gmail.com); . July 2022 . ",
     "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html#geologically-realistic-representations-of-seafloor-crustal-relief-and-patchy-sediment-cover",
     "relUrl": "/01_intro.html#geologically-realistic-representations-of-seafloor-crustal-relief-and-patchy-sediment-cover"
   },"1": {
     "doc": "Introduction",
     "title": "Introduction",
-    "content": "This tutorial is a resource that accompanies a robust set of resources including a publication, psuedo-code, github repository, and data repository for constructing a three-dimensional grid of geologically realistic representations of seafloor crustal relief. The three-dimensional simulation domain described here has been used in multiple publications focusing on the thermal and hydrogeologic regime of coupled fluxes beneath a marine sediment pond (Price et al., 2022; Price et al., in-prep). The tutorial can be broken down into a workflow consisting of 5 main sections: constructing surfaces, constructing a domain, refining the domain, defining and assigning material types to regions, and a general clean-up of the domain. There will be two examples included for each step. One example will use a general case that will introduce the concepts in a simple manner and the other example will be for construction of the North Pond domain. This tutorial will not be an exhaustive tutorial on the functionality of LaGriT as there are many examples that can be found here. Instead, this tutorial will serve as a \"cookbook\" that allows the user to understand the steps used in construction of this simulation domain using the lessons and approaches explained below. Happy gridding! . ",
+    "content": "1. TOC . This tutorial is a resource that accompanies a robust set of resources including a publication, psuedo-code, github repository, and data repository for constructing a three-dimensional grid of geologically realistic representations of seafloor crustal relief. The three-dimensional simulation domain described here has been used in multiple publications focusing on the thermal and hydrogeologic regime of coupled fluxes beneath a marine sediment pond (Price et al., 2022; Price et al., in-prep). The tutorial can be broken down into a workflow consisting of 5 main sections: constructing surfaces, constructing a domain, refining the domain, defining and assigning material types to regions, and a general clean-up of the domain. There will be two examples included for each step. One example will use a general case that will introduce the concepts in a simple manner and the other example will be for construction of the North Pond domain. This tutorial will not be an exhaustive tutorial on the functionality of LaGriT as there are many examples that can be found here. Instead, this tutorial will serve as a \"cookbook”&amp;quot”; that allows the user to understand the steps used in construction of this simulation domain using the lessons and approaches explained below. Happy gridding! . ",
     "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html",
     "relUrl": "/01_intro.html"
   },"2": {
@@ -19,7 +19,7 @@
   },"3": {
     "doc": "Introduction",
     "title": "Document styling, commands, and files",
-    "content": "Document style . Throughout the document italicized words willdenote either a file name or a variable within LaGrit. Code blocks will be denoted by the following style: . Code here # Comments will be denoted with an octothorpe (pound sign) . Commands . In lieu of repeating this code chunk in each of the following steps in the tutorial, any LaGriT input files (.lgi) that are run in the tutorial are done so by executing the following command in the command line: . lagrit \\&amp;lt; _filename_ . This will be denoted with the phrase execute filename.lgi in LaGriT. Steps within the tutorial will be broken down by LaGriT file and have necessary inputs and outputs specified as such: . | FIlename | Input | Output | . | _ filename.lgi _ | inputFilename | outputFilename | . File types . | Extension | Filetype | Purpose | . | _ *.lgi | LaGriT control file | LaGriT input control file, specifies mesh generation. | . | _ *.mlgi | LaGriT control file | LaGriT input control file used to specify a subroutine within *.lgi file. | . | _ *.inp | AVS UCD (Unstructured Cell Data) file | Created by LaGriT and contains information about mesh objects. Can be opened in Paraview to visualize data. | . | _ *.zone, *.area, *.stor, *.fehmn _ | FEHM files | LaGriT output files that are of general use but are specifically designed for theFEHM porous flow and transport code | . | _ outx3dgen | LaGriT output file | Output file containing commands and output from commands executed in LaGriT (overwritten every time LaGriT command is called) | . | _ legx3dgen | LaGriT log file | Log file containing commands executed in LaGriT (overwritten every time LaGriT command is called) | . | _ *.csv | Text file (comma separated values) | In this tutorial, these are text files containing coordinates in meters for surfaces. Columns are x, y, z coordinates respectively. | . ## . ",
+    "content": "Document style . Throughout the document italicized words willdenote either a file name or a variable within LaGrit. Code blocks will be denoted by the following style: . Code here # Comments will be denoted with an octothorpe (pound sign) . Commands . In lieu of repeating this code chunk in each of the following steps in the tutorial, any LaGriT input files (.lgi) that are run in the tutorial are done so by executing the following command in the command line: . lagrit &lt; filename . This will be denoted with the phrase execute filename.lgi in LaGriT. Steps within the tutorial will be broken down by LaGriT file and have necessary inputs and outputs specified as such: . | Filename | Input | Output | . | *filename.lgi | inputFilename | outputFilename | . File types . | Extension | Filetype | Purpose | . | _ *.lgi | LaGriT control file | LaGriT input control file, specifies mesh generation. | . | _ *.mlgi | LaGriT control file | LaGriT input control file used to specify a subroutine within *.lgi file. | . | _ *.inp | AVS UCD (Unstructured Cell Data) file | Created by LaGriT and contains information about mesh objects. Can be opened in Paraview to visualize data. | . | _ *.zone, *.area, *.stor, *.fehmn _ | FEHM files | LaGriT output files that are of general use but are specifically designed for theFEHM porous flow and transport code | . | _ outx3dgen | LaGriT output file | Output file containing commands and output from commands executed in LaGriT (overwritten every time LaGriT command is called) | . | _ legx3dgen | LaGriT log file | Log file containing commands executed in LaGriT (overwritten every time LaGriT command is called) | . | _ *.csv | Text file (comma separated values) | In this tutorial, these are text files containing coordinates in meters for surfaces. Columns are x, y, z coordinates respectively. | . ## . ",
     "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html#document-styling-commands-and-files",
     "relUrl": "/01_intro.html#document-styling-commands-and-files"
   },"4": {
@@ -30,89 +30,101 @@
     "relUrl": "/01_intro.html#getting-started"
   },"5": {
     "doc": "Constructing refining surfaces",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html#hello",
-    "relUrl": "/02_surfaces.html#hello"
+    "title": "Surfaces",
+    "content": "The first step in the construction of a simulation domain is to construct surfaces that represent geologically realistic layers. These surfaces will define boundaries that allow assignment of specific material properties and act as surfaces to refine the simulation domain. Surfaces can be constructed in LaGriT or in an outside programming language such as R, Python, or Matlab and brought into LaGritT. In both cases in this tutorial, surfaces were constructed outside of LaGriT and brought in to define mesh objects. The general steps to construct surfaces are: . | Save mesh coordinates (x,y,z) into a .csv file . | Create mesh object that has coordinate system (x and y) of desired mesh resolution (have to define if different from .csv file coordinates) . | Connect mesh objects with new coordinates in x and y. | Read in the .csv as a mesh object into LaGriT . | Copy over z-coordinates from mesh in step 4 to connected mesh in step 2 . | . | . This process forces LaGriT to make the “best” connections within an x-y plane to begin with and then the coordinates along the z-axis with relief to be defined, thereby preventing any connections outside the plane. ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html#surfaces",
+    "relUrl": "/02_surfaces.html#surfaces"
   },"6": {
+    "doc": "Constructing refining surfaces",
+    "title": "Generalized Mesh",
+    "content": "For the general case, there is one control file (.lgi), one input file (_surface.lgi*), and four output surfaces. | Filename | Input | Output | . | 1_create_surface.lgi | surface.csv | 1_surface_aq200.inp | . | 1_surface_aq800.inp |   |   | . | 1_surface_zero.inp |   |   | . | 1_surface.inp |   |   | . Overview . For the general case, surface.csv is a continuous function; \\(z(x,y) = -cos(x) - cos(y)\\) that replicates, but generalizes topography and structures observed in seafloor bathymetric data. The maxima of the function would be representative of seamounts, whereas the minima would represent sediment ponds, both common features on the seafloor. These relationships may be difficult to observe but they will become clear throughout the tutorial. Steps . First, navigate to the directory for the general case (i.e. GeologicGriddingData/GeneralLaGriT) . Next, execute the .lgi file . lagrit &lt; 1_create_surface.lgi . Figures . Figure 1: Interactive figure is made using the file 1_surface.inp in a program called Kitware Glance which is very useful for sharing and visualizing Paraview data. The surface is outlined by the eventual domain and shows the extent and relief of our initial surface. Figure 2: All the surfaces output from 1_surface.inp. Surfaces represent the upper most topography, layers at 200 and 800m below surface, and a surface at 0m. These surfaces will surface as boundaries for refinement as well as assigning materials to the simulation domain. ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html#generalized-mesh",
+    "relUrl": "/02_surfaces.html#generalized-mesh"
+  },"7": {
+    "doc": "Constructing refining surfaces",
+    "title": "North Pond",
+    "content": "For the North Pond case, the first seven .lgi files define surfaces. The initial surface that represents the regional bathymetry of North Pond, was constructed outside of LaGriT in R. The details of sampling data for surface construction can be found in the supplemental information Price et al., 2022. From samples of bathymetric data surrounding North Pond, a continuous function that best describes the region is: \\(z(x,y)= \\frac{1}{t}\\arctan\\left (\\frac{t*\\sin(x)}{1-t*\\cos(x)}\\right) - \\frac{1}{t}\\arctan\\left (\\frac{t*\\sin(y)}{1-t*\\cos(y)}\\right)\\) where t determines the “tilt” of the function, x is the strike-normal distance, and y is the strike-parallel distance. | Filename | Input | Output | . | 1_price_surf_domain.lgi | function6.csv | 1_surf_domain.inp | . Overview . Create mesh object surface representing North Pond bathymetry using function6.csv . | Filename | Input | Output | . | 2_price_surf_mid_grid.lgi | 2_middle_grid.csv | 2_surf_mid_grid.inp | . Overview . Create mesh object surface from trimmed area of interest created from truncated bathymetric surface (2_middle_grid.csv) representing North Pond and immediately adjacent region. | Filename | Input | Output | . | 3_price_surf_mid_sb.lgi | 3_middle_sb.csv | 3_surf_mid_sb.inp | . Overview . Create mesh object surface from trimmed area of interest created from truncated bathymetric surface (3_middle_sb.csv) representing sediment / basement interface beneath North Pond. | Filename | Input | Output | . | 4_price_surf_flat_zero.lgi | None | 4_surf_flat_zero.inp | . Overview . Construct a flat surface at z = 0 at the same spatial extent as 2_middle_grid.csv. | Filename | Input | Output | . | 5_price_surf_aq100.lgi | 3_surf_mid_sb.inp | 5_surf_aq100.inp | . Overview . Construct a volume that represents a 100m thick aquifer section directly beneath North Pond. | Filename | Input | Output | . | 6_price_surf_aq300_1k.lgi | 2_surf_mid_grid.inp | 6_surf_aq300_1k.inp | . Overview . Construct a volume that represents a 900 m thick aquifer section directly beneath the region representing North Pond. | Filename | Input | Output | . | 7_price_surf_filt.lgi | 1_surf_domain.inp | 7_surf_filt_aq100.inp | . | 7_surf_filt_aq300.inp |   |   | . | 7_surf_filt_aq600.inp |   |   | . | 7_surf_filt_aq1k.inp |   |   | . Introduction Constructing and refining domain . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html#north-pond",
+    "relUrl": "/02_surfaces.html#north-pond"
+  },"8": {
     "doc": "Constructing refining surfaces",
     "title": "Constructing refining surfaces",
     "content": " ",
     "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html",
     "relUrl": "/02_surfaces.html"
-  },"7": {
-    "doc": "Constructing Simulation Domain",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html#hello",
-    "relUrl": "/03_domain.html#hello"
-  },"8": {
-    "doc": "Constructing Simulation Domain",
-    "title": "Constructing Simulation Domain",
-    "content": " ",
+  },"9": {
+    "doc": "Constructing and refining domain",
+    "title": "Constructing and refining domain",
+    "content": "[Placeholder] . ",
     "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html",
     "relUrl": "/03_domain.html"
-  },"9": {
-    "doc": "Refining simulation domain",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_refinement.html#hello",
-    "relUrl": "/04_refinement.html#hello"
   },"10": {
-    "doc": "Refining simulation domain",
-    "title": "Refining simulation domain",
-    "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_refinement.html",
-    "relUrl": "/04_refinement.html"
+    "doc": "Constructing and refining domain",
+    "title": "Generalized Mesh",
+    "content": "| Filename | Input | Output | . | 2_refine_domain.lgi | 1_surface_aq200.inp | 2_initial_domain.inp | . | 1_surface_aq800.inp | 2_hexRefine_octree.inp |   | . | 1_surface.inp | 2_surface_octree.inp |   | . | 2_surfaceAQ200_octree.inp |   |   | . | 2_surfaceAQ800_octree.inp |   |   | . Overview . Figures . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html#generalized-mesh",
+    "relUrl": "/03_domain.html#generalized-mesh"
   },"11": {
-    "doc": "Define regions and assign materials",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_defineRegions.html#hello",
-    "relUrl": "/05_defineRegions.html#hello"
+    "doc": "Constructing and refining domain",
+    "title": "North Pond",
+    "content": "Overview . Figures . Constructing refining surfaces Define regions and assign materials . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html#north-pond",
+    "relUrl": "/03_domain.html#north-pond"
   },"12": {
     "doc": "Define regions and assign materials",
     "title": "Define regions and assign materials",
-    "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_defineRegions.html",
-    "relUrl": "/05_defineRegions.html"
+    "content": "[Placeholder] . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html",
+    "relUrl": "/04_defineRegions.html"
   },"13": {
-    "doc": "Cleanup domain, materials, and boundary conditions",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_cleanup.html#hello",
-    "relUrl": "/06_cleanup.html#hello"
+    "doc": "Define regions and assign materials",
+    "title": "Generalized Mesh",
+    "content": "Overview . Figures . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html#generalized-mesh",
+    "relUrl": "/04_defineRegions.html#generalized-mesh"
   },"14": {
+    "doc": "Define regions and assign materials",
+    "title": "North Pond",
+    "content": "Overview . Figures . Constructing refining surfaces Define regions and assign materials . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html#north-pond",
+    "relUrl": "/04_defineRegions.html#north-pond"
+  },"15": {
+    "doc": "Cleanup domain, materials, and boundary conditions",
+    "title": "Define regions and assign materials",
+    "content": " ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_cleanup.html#define-regions-and-assign-materials",
+    "relUrl": "/05_cleanup.html#define-regions-and-assign-materials"
+  },"16": {
+    "doc": "Cleanup domain, materials, and boundary conditions",
+    "title": "Generalized Mesh",
+    "content": "Overview . Figures . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_cleanup.html#generalized-mesh",
+    "relUrl": "/05_cleanup.html#generalized-mesh"
+  },"17": {
+    "doc": "Cleanup domain, materials, and boundary conditions",
+    "title": "North Pond",
+    "content": "Overview . Figures . Constructing refining surfaces Define regions and assign materials . ",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_cleanup.html#north-pond",
+    "relUrl": "/05_cleanup.html#north-pond"
+  },"18": {
     "doc": "Cleanup domain, materials, and boundary conditions",
     "title": "Cleanup domain, materials, and boundary conditions",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_cleanup.html",
-    "relUrl": "/06_cleanup.html"
-  },"15": {
-    "doc": "Pseudo code: General Case",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoGeneral.html#hello",
-    "relUrl": "/07_pseudoGeneral.html#hello"
-  },"16": {
-    "doc": "Pseudo code: General Case",
-    "title": "Pseudo code: General Case",
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/05_cleanup.html",
+    "relUrl": "/05_cleanup.html"
+  },"19": {
+    "doc": "Pseudo code: General case",
+    "title": "Pseudo code: General case",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoGeneral.html",
-    "relUrl": "/07_pseudoGeneral.html"
-  },"17": {
-    "doc": "Pseudo code: North Pond",
-    "title": "Hello",
-    "content": "asdfasd . ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoNorthPond.html#hello",
-    "relUrl": "/07_pseudoNorthPond.html#hello"
-  },"18": {
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_pseudoGeneral.html",
+    "relUrl": "/06_pseudoGeneral.html"
+  },"20": {
     "doc": "Pseudo code: North Pond",
     "title": "Pseudo code: North Pond",
     "content": " ",
-    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoNorthPond.html",
-    "relUrl": "/07_pseudoNorthPond.html"
-  },"19": {
+    "url": "https://adamnicholasprice.github.io/GeologicGriddingTutorial/06_pseudoNorthPond.html",
+    "relUrl": "/06_pseudoNorthPond.html"
+  },"21": {
     "doc": "About",
     "title": "About",
     "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com . You can find the source code for Minima at GitHub: jekyll / minima . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
