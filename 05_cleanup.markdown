@@ -31,4 +31,4 @@ has_children: true
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
 
-[Constructing refining surfaces](http://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html){: .btn .btn-purple } [Define regions and assign materials](http://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html){: .btn .btn-purple }
+ [Define regions and assign materials](http://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html){: .btn .btn-purple } [Pseudo code: General case](http://adamnicholasprice.github.io/GeologicGriddingTutorial/06_pseudoGeneral.html){: .btn .btn-purple }

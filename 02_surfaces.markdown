@@ -26,14 +26,14 @@ This process forces LaGriT to make the “best” connections within an x-y plan
 
 ## Generalized Mesh
 
-For the general case, there is one control file (.lgi), one input file (_surface.lgi*), and four output surfaces.
+For the general case, there is one control file (.lgi), one input file (*surface.lgi*), and four output surfaces.
 
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
 | *1_create_surface.lgi* | *surface.csv* | *1_surface_aq200.inp* |
-| *1_surface_aq800.inp* |
-| *1_surface_zero.inp*|
-| *1_surface.inp* |
+|                       |                       | *1_surface_aq800.inp* |
+|                       |                       | *1_surface_zero.inp*|
+|                       |                       | *1_surface.inp* |
 
 ### Overview
 For the general case, *surface.csv* is a continuous function;
@@ -127,9 +127,9 @@ Construct a volume that represents a 900 m thick aquifer section directly beneat
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
 | 7_price_surf_filt.lgi | _1_surf_domain.inp_ | _7_surf_filt_aq100.inp_ |
-| _7_surf_filt_aq300.inp_ |
-| _7_surf_filt_aq600.inp_ |
-| _7_surf_filt_aq1k.inp_ |
+|                       |                       |_7_surf_filt_aq300.inp_ |
+|                       |                       |_7_surf_filt_aq600.inp_ |
+|                       |                       | _7_surf_filt_aq1k.inp_ |
 
 
 

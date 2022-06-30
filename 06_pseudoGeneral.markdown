@@ -5,3 +5,6 @@ nav_order: 7
 ---
 
 # Pseudo code: General case
+
+
+[Cleanup domain, materials, and boundary conditions](http://adamnicholasprice.github.io/GeologicGriddingTutorial/05_cleanup.html){: .btn .btn-purple } [Pseudo code: North Pond](http://adamnicholasprice.github.io/GeologicGriddingTutorial/06_pseudoNorthPond.html){: .btn .btn-purple }
