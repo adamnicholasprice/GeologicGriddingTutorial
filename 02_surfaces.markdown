@@ -37,7 +37,9 @@ For the general case, there is one control file (.lgi), one input file (*surface
 
 ### Overview
 For the general case, *surface.csv* is a continuous function;
-$$ z(x,y) = -cos(x) - cos(y) $$
+$$
+z(x,y) = -cos(x) - cos(y)
+$$
 that replicates, but generalizes topography and structures observed in seafloor bathymetric data. The maxima of the function would be representative of seamounts, whereas the minima would represent sediment ponds, both common features on the seafloor. These relationships may be difficult to observe but they will become clear throughout the tutorial.
 
 ### Steps
@@ -75,7 +77,9 @@ lagrit < 1_create_surface.lgi
 ## North Pond
 
 For the North Pond case, the first seven .lgi files define surfaces. The initial surface that represents the regional bathymetry of North Pond, was constructed outside of LaGriT in R. The details of sampling data for surface construction can be found in the supplemental information [Price et al., 2022](https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1029%2F2021JB023158&file=2021JB023158-sup-0001-Supporting+Information+SI-S01.docx). From samples of bathymetric data surrounding North Pond, a continuous function that best describes the region is:
-    $$z(x,y)=  \frac{1}{t}\arctan\left (\frac{t*\sin(x)}{1-t*\cos(x)}\right) - \frac{1}{t}\arctan\left (\frac{t*\sin(y)}{1-t*\cos(y)}\right)$$
+    $$
+    z(x,y)=  \frac{1}{t}\arctan\left (\frac{t*\sin(x)}{1-t*\cos(x)}\right) - \frac{1}{t}\arctan\left (\frac{t*\sin(y)}{1-t*\cos(y)}\right)
+    $$
 where t determines the “tilt” of the function, x is the strike-normal distance, and y is the strike-parallel distance.
 
 
