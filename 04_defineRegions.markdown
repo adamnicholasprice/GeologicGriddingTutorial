@@ -2,11 +2,19 @@
 layout: post
 title:  "Define regions and assign materials"
 nav_order: 5
-has_children: true
 ---
 # Define regions and assign materials
 
-[Placeholder]
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
 
 ## Generalized Mesh
 ### Overview

@@ -2,15 +2,26 @@
 layout: home
 title:  "Introduction"
 nav_order: 2
-has_children: true
 ---
 
 # Geologically Realistic Representations of Seafloor Crustal Relief and Patchy Sediment Cover
-
-### Adam N. Price [adamnicholasprice@gmail.com] (adamnicholasprice@gmail.com);
+{: .no_toc }
+### Adam N. Price [adamnicholasprice@gmail.com](adamnicholasprice@gmail.com)
+{: .no_toc }
 #### July 2022
+{: .no_toc }
+{: .no_toc }
 
+<details markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
+---
 # Introduction
 
 This tutorial is a resource that accompanies a robust set of resources including a publication, psuedo-code, github repository, and data repository for constructing a three-dimensional grid of geologically realistic representations of seafloor crustal relief. The three-dimensional simulation domain described here has been used in multiple publications focusing on the thermal and hydrogeologic regime of coupled fluxes beneath a marine sediment pond (Price et al., 2022; Price et al., in-prep).

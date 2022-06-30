@@ -2,10 +2,19 @@
 layout: post
 title:  "Constructing refining surfaces"
 nav_order: 3
-has_children: true
 ---
-# Surfaces
 
+# Surfaces
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
 The first step in the construction of a simulation domain is to construct surfaces that represent geologically realistic layers. These surfaces will define boundaries that allow assignment of specific material properties and act as surfaces to refine the simulation domain. Surfaces can be constructed in LaGriT or in an outside programming language such as R, Python, or Matlab and brought into LaGritT. In both cases in this tutorial, surfaces were constructed outside of LaGriT and brought in to define mesh objects. The general steps to construct surfaces are:
 
 1. Save mesh coordinates (x,y,z) into a .csv file
@@ -37,9 +46,9 @@ For the general case, there is one control file (.lgi), one input file (*surface
 
 ### Overview
 For the general case, *surface.csv* is a continuous function;
-$$
+$
 z(x,y) = -cos(x) - cos(y)
-$$
+$
 that replicates, but generalizes topography and structures observed in seafloor bathymetric data. The maxima of the function would be representative of seamounts, whereas the minima would represent sediment ponds, both common features on the seafloor. These relationships may be difficult to observe but they will become clear throughout the tutorial.
 
 ### Steps

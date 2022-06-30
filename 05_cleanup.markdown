@@ -2,9 +2,19 @@
 layout: post
 title:  "Cleanup domain, materials, and boundary conditions"
 nav_order: 6
-has_children: true
 ---
 # Define regions and assign materials
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
 
 ## Generalized Mesh
 

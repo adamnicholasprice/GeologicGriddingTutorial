@@ -2,11 +2,19 @@
 layout: post
 title:  "Constructing and refining domain"
 nav_order: 4
-has_children: true
 ---
 # Constructing and refining domain
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
-[Placeholder]
+---
+
 
 ## Generalized Mesh
 
