@@ -5,4 +5,6 @@
 layout: home
 ---
 
-Whats this
+# Geologically Realistic Representations of Seafloor Crustal Relief and Patchy Sediment Cover
+### Adam N. Price [adamnicholasprice@gmail.com](adamnicholasprice@gmail.com)
+#### July 2022
