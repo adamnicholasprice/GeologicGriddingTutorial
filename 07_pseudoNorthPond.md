@@ -3,10 +3,14 @@ layout: post
 title:  "Pseudo code: North Pond"
 nav_order: 8
 ---
+
+
+
 # Pseudo code: North Pond
 {: .no_toc}
 ## General files description
 {: .no_toc}
+
 | **Filename** | **File purpose** |
 | --- | --- |
 |1_surf_domain.lgi| Construct reference surfaces|
@@ -25,11 +29,12 @@ nav_order: 8
 
 # **Files:**
 ## **Function6**
-Bathymetric function.
+CSV file with x,y,z of function representing bathymetry and sediment-basement contact
 ## **2_mid_grid.csv**
 Clipped bathymetry file representing North Pond and surrounding area. Used for high resolution filtering
 ## **3_middle_sb.csv**
 Clipped bathymetry file representing just the sediment = basement interface.
+
 <details markdown="block">
   <summary>
     Table of contents
@@ -40,7 +45,7 @@ Clipped bathymetry file representing just the sediment = basement interface.
 </details>
 
 ---
-## 1_surf_domain.lgi 
+## 1_surf_domain.lgi
 
 | **Input** | **Output** |
  --- | --- |
@@ -82,6 +87,7 @@ Dump surface to file *2_surf_mid_grid.inp*
 ### **File link:**
 
 ## 3_surf_mid_sb.lgi
+
 | **Input** | **Output** |
  --- | --- |
 3_middle_sb.csv|3_surf_mid_sb.inp|
@@ -119,6 +125,7 @@ Dump mesh object *mo_tri* to file *4_surf_flat_zero.inp*
 ### **File link:**
 
 ## 5_surf_aq100.lgi
+
 | **Input** | **Output** |
  --- | --- |
 |3_surf_mid_sb.inp|5_surf_aq100.inp|
@@ -138,6 +145,7 @@ Dump *mo_tet* to file *5_surf_aq100.inp*
 ### **File link:**
 
 ## 6_surf_aq300_1k.lgi
+
 | **Input** | **Output** |
  --- | --- |
 |2_surf_mid_grid.inp|6_surf_aq300_1k.inp|
@@ -155,6 +163,7 @@ Dump *mo_tet* to file *6_surf_aq300_1k.inp*
 ### **File link:**
 
 ## 7_surf_filt.lgi
+
 | **Input** | **Output** |
  --- | --- |
 |1_surf_domain.inp|7_surf_filt_aq100.inp|
@@ -185,6 +194,7 @@ Dump mesh objects to files:
 ### **File link:**
 
 ## 8_driver_high_resolution_clipped.lgi
+
 | **Input** | **Output** |
  --- | --- |
 |1_surf_domain.inp|8_1_octree_NP.inp|
@@ -277,6 +287,7 @@ The selected set, *erefine,* is refined.
 
 
 ## 9_surf_north_pond_seafloor.lgi
+
 | **Input** | **Output** |
 |--- | --- |
 |3_middle_sb.csv|9_surf_north_pond_seafloor.inp|
@@ -293,6 +304,7 @@ Dump mesh object *sedbase* to *9_surf_north_pond_seafloor.inp*
 
 
 ## 10_surf_aq_volumes.lgi
+
 |**Input** | **Output** |
 |--- | --- |
 |2_surf_mid_grid.inp|10_surf_filt_mid_grid_aq100.inp|
@@ -328,6 +340,7 @@ Dump mesh objects to files:
 
 
 ## 11_region_set.lgi
+
 | **Input** | **Output** |
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
@@ -399,6 +412,7 @@ Dump mesh object *mo_hex* to file  *11_hex_refine_octree.inp*
 
 
 ## 12_remove_top.lgi
+
 | **Input** | **Output** |
 |--- | --- |
 |11_hex_refine_octree.inp|12_tmp_hex_mesh.inp|
@@ -428,6 +442,7 @@ Check the quality of the mesh. Dump *mo_tet* to file *12_tmp_tet_interp.inp*.
 
 
 ## 13_top_region_set.lgi
+
 | **Input** | **Output** |
 |--- | --- |
 |12_tmp_tet_interp.inp|13_tet_reset_final.inp|
@@ -456,6 +471,16 @@ Sort nodes based on the rank of the node number, then x-, y-, and z-coordinate r
 ### **Lines 23 - 24**
 Dump the mesh object *mo* to file *13_tet_reset_final.inp*
 ### **File link:**
+
+
+<script>
+    var app = "https://kitware.github.io/paraview-glance/app";
+    var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
+    var file = "12_tetTopReset.vtkjs";
+
+    document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
+
+</script>
 
 
 [Pseudo code: General Case](http://adamnicholasprice.github.io/GeologicGriddingTutorial/07_pseudoGeneral.html){: .btn .btn-purple } [Execute Scripts](http://adamnicholasprice.github.io/GeologicGriddingTutorial/08_executeScripts.html){: .btn .btn-purple }

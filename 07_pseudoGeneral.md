@@ -7,7 +7,7 @@ nav_order: 7
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
-    var file = "1_surface.vtkjs";
+    var file = "generalTetFinal.vtkjs";
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
@@ -16,6 +16,7 @@ nav_order: 7
 {: .no_toc}
 ## General files description
 {: .no_toc}
+
 | **Filename** | **File purpose** |
 | --- | --- |
 |1_create_surface.lgi| Constructing reference surfaces|
@@ -43,7 +44,7 @@ nav_order: 7
 Create all surfaces needed in construction, refinement, and material assignment of general case mesh.
 
 ### **Lines 1 - 6**
-Assign coordinate system in meters from xmin, ymin, zmin = -5000,-5000 to xmax, ymax  = 5000,5000 and number of points in x,y = 201,201. 
+Assign coordinate system in meters from xmin, ymin, zmin = -5000,-5000 to xmax, ymax  = 5000,5000 and number of points in x,y = 201,201.
 
 ### **Lines 9 - 13**
 Create mesh object *mo_surface* that has the above x and y dimensions with z = 0 and connect the points in the surface
@@ -73,7 +74,7 @@ Create mesh object *mo_zero* at z = 0 with a two points in x and y with the same
 
 
 ## **Overview**
-First, we create an inital hexahedral mesh. Next, we read in all the surfaces created in the previous files. Finally, the subroutine *refine_object.mlgi* is called to perform octree refinement along the elements intersected with the surfaces called and files are created for each of those refinement iterations. 
+First, we create an inital hexahedral mesh. Next, we read in all the surfaces created in the previous files. Finally, the subroutine *refine_object.mlgi* is called to perform octree refinement along the elements intersected with the surfaces called and files are created for each of those refinement iterations.
 
 ### **Lines 2 -  14**
 Define xmin, ymin, zmin = -5000,-5000, -4000 to xmax, ymax, zmax  = 5000,5000,1000 and number of points in x,y,z = 11,11,6. This sets the initial resolution at 1000m elements in x,y,z. Create the mesh object *domain_hex* and dump to file *2_initial_domain.inp*.
@@ -167,7 +168,7 @@ This process repeats for different conditions until line 37. The layers that cor
 - 1 - Sediment
 - 2 - Aquifer layer 0 - 200m
 - 3 - Aquifer layer 200 - 800m
-- 4 - Conductive basement < 800 m 
+- 4 - Conductive basement < 800 m
 - 5 - Everything else (i.e., the area above the refined topographic surface)
 
 ### **Lines 39 - 43**
@@ -186,7 +187,7 @@ Remove material zone 5 corresponding to elements above refined topography.
 Reset attributes *cell_color* and *itp*. Check status of mesh
 
 ### **Line 73 - 78**
-Dump outside zone files to read back in later steps. Select points with material zone (imt) greater than 1 and in the top zone for mesh *domain_tet* and set attribute imt to zone 2. 
+Dump outside zone files to read back in later steps. Select points with material zone (imt) greater than 1 and in the top zone for mesh *domain_tet* and set attribute imt to zone 2.
 
 ### Line 81
 Dump completed mesh *domain_tet* to file *3_tetDomain_regionSet.inp*

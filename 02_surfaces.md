@@ -4,7 +4,8 @@ title:  "Constructing refining surfaces"
 nav_order: 3
 ---
 # Surfaces
-<details open markdown="block">
+
+<details markdown="block">
   <summary>
     Table of contents
   </summary>
@@ -56,7 +57,6 @@ Next, execute the .lgi file
 lagrit < 1_create_surface.lgi
 ```
 
-### Figures
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -64,8 +64,10 @@ lagrit < 1_create_surface.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 1
 Interactive figure is made using the file *1_surface.inp* in a program called [Kitware Glance](https://kitware.github.io/glance/app/) which is very useful for sharing and visualizing Paraview data. The surface is outlined by the eventual domain and shows the extent and relief of our initial surface.
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -73,6 +75,7 @@ Interactive figure is made using the file *1_surface.inp* in a program called [K
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 2
 All the surfaces output from _1_surface.inp_. Surfaces represent the upper most topography, layers at 200 and 800m below surface, and a surface at 0m. These surfaces will surface as boundaries for refinement as well as assigning materials to the simulation domain.
 
@@ -82,22 +85,23 @@ For the North Pond case, the first seven .lgi files define surfaces. The initial
     $$
     z(x,y)=  \frac{1}{t}\arctan\left (\frac{t*\sin(x)}{1-t*\cos(x)}\right) - \frac{1}{t}\arctan\left (\frac{t*\sin(y)}{1-t*\cos(y)}\right)
     $$
-where t determines the “tilt” of the function, x is the strike-normal distance, and y is the strike-parallel distance. The inital surface is defined from -10 to 10 in the x and y directions. 
+where t determines the “tilt” of the function, x is the strike-normal distance, and y is the strike-parallel distance. The inital surface is defined from -10 to 10 in the x and y directions.
 
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
 | *1_surf_domain.lgi* | *function6.csv* | *1_surf_domain.inp* |
 
 ### Overview
-Create mesh object surface representing North Pond bathymetry using function6.csv. The surface created above is brought into LaGriT and assigned a new coordinate system that assigns the correct slopes to the areas of interest. This new coordinate system is from -75 km to 75 km along-strike, -30 km to 30 km in the across-strike direction, with an amplitude of 600 m. 
+Create mesh object surface representing North Pond bathymetry using function6.csv. The surface created above is brought into LaGriT and assigned a new coordinate system that assigns the correct slopes to the areas of interest. This new coordinate system is from -75 km to 75 km along-strike, -30 km to 30 km in the across-strike direction, with an amplitude of 600 m.
 
 
 ### Syntax
-Navigate to the directory for the North Pond mesh case and 
+Navigate to the directory for the North Pond mesh case and
 
 ```
 lagrit < 1_surf_domain.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -105,6 +109,7 @@ lagrit < 1_surf_domain.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 3
 Inital North Pond surface with 4x vertical exaggeration
 
@@ -120,6 +125,7 @@ Create mesh object surface from trimmed area of interest created from truncated 
 ```
 lagrit < 2_surf_mid_grid.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -127,6 +133,7 @@ lagrit < 2_surf_mid_grid.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 4
 Surface *2_surf_mid_grid.inp*, representing a subset of the inital surface above just in the area and immediately adjacent to North Pond with 4x vertical exaggeration.
 
@@ -142,6 +149,7 @@ Create mesh object surface from trimmed area of interest created from truncated 
 ```
 lagrit < 3_surf_mid_sb.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -149,6 +157,7 @@ lagrit < 3_surf_mid_sb.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 5
 Surface *3_surf_mid_sb.inp*, representing the sediment-basement contact directly below the sedimented pond in North Pond with 4x vertical exaggeration
 
@@ -164,6 +173,7 @@ Construct a flat surface at z = 0 at the same spatial extent as *2_middle_grid.c
 ```
 lagrit < 4_surf_flat_zero.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -171,6 +181,7 @@ lagrit < 4_surf_flat_zero.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 6
 Surface *4_surf_flat_zero.inp*, in the area of and immediately adjacent to North Pond.
 
@@ -179,13 +190,14 @@ Surface *4_surf_flat_zero.inp*, in the area of and immediately adjacent to North
 | *5_surf_aq100.lgi* | *3_surf_mid_sb.inp* | *5_surf_aq100.inp* |
 
 ### Overview
-Construct a volume that represents a 100m thick aquifer section directly beneath the sediment-basement contact of North Pond with the same extent as *3_surf_mid_sb.inp* 
+Construct a volume that represents a 100m thick aquifer section directly beneath the sediment-basement contact of North Pond with the same extent as *3_surf_mid_sb.inp*
 
 ### Syntax
 
 ```
 lagrit < 5_surf_aq100.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -193,6 +205,7 @@ lagrit < 5_surf_aq100.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 7
 Volume  *5_surf_aq100.inp*, representing a 100m thick aquifer section below North Pond 10x vertical exaggeration.
 
@@ -209,6 +222,7 @@ Construct a volume that represents a 900 m thick aquifer section from the base o
 ```
 lagrit < 6_surf_aq300_1k.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -216,6 +230,7 @@ lagrit < 6_surf_aq300_1k.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 8
 Volume 6_surf_aq300_1k.inp, representing a 900m thick aquifer section 4x vertical exaggeration.
 
@@ -233,6 +248,7 @@ Construct sufaces that represent the transitions from:
 - aquifer 200 m thickness to 300 m thickness (7_surf_filt_aq300.inp)
 - aquifer 300 m thickness to 400 m thickness (7_surf_filt_aq600.inp)
 - aquifer 400 m thickness to 500 m thickness (7_surf_filt_aq1k.inp)
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -240,19 +256,23 @@ Construct sufaces that represent the transitions from:
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 9
 Surfaces *7_surf_filt_aq100.inp* (brown), *7_surf_filt_aq300.inp* (tan),*7_surf_filt_aq600.inp* (light purple), and *7_surf_filt_aq1k.inp* (dark purple) with 4x vertical exaggeration.
 
 ## Conclusion
 
 Making surfaces to define material zones corresponding to stratigraphic sections and provide refinement boundaries is the most important and time consuming step in this process. The final figure shows the 10 surfaces and volumes constructed to define and refined the North Pond mesh.
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
-    var file = "all_surfs.vtkjs";
+    var file = "all_surf.vtkjs";
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 10
 All surfaces and volumes constructed for North Pond mesh.
+
 [Introduction](http://adamnicholasprice.github.io/GeologicGriddingTutorial/01_intro.html){: .btn .btn-purple } [Constructing and refining domain](http://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html){: .btn .btn-purple }

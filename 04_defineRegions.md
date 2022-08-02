@@ -14,9 +14,10 @@ nav_order: 5
 </details>
 
 ---
-Next, using the surfaces and volumes constructed in the previous steps, we define material zones that correspond to stratigraphic units of interest in our mesh. Defining zones in this way, allows the user to assign physical properties, boundary conditions, and query simulation outputs much easier that doing so element by element. 
+Next, using the surfaces and volumes constructed in the previous steps, we define material zones that correspond to stratigraphic units of interest in our mesh. Defining zones in this way, allows the user to assign physical properties, boundary conditions, and query simulation outputs much easier that doing so element by element.
 
 ## Generalized Mesh
+
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
 | *3_set_region_truncate.lgi* | *1_surface_aq200.inp* | *3_hexDomain_defineZones.inp* |
@@ -26,7 +27,7 @@ Next, using the surfaces and volumes constructed in the previous steps, we defin
 |                       | *2_hexRefine_octree.inp*| |
 
 ### Overview
-In this step we set material zones, remove elements outside the area of interest, convert from hexahedral mesh to tetrahedral mesh, and ensure all zones are assigned correctly. 
+In this step we set material zones, remove elements outside the area of interest, convert from hexahedral mesh to tetrahedral mesh, and ensure all zones are assigned correctly.
 
 ### Syntax
 ```
@@ -55,6 +56,7 @@ However, these zones must be set in the correct order because any subsquent assi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 1
 General case hexahedral mesh colored by material zones assigned above
 
@@ -62,6 +64,7 @@ General case hexahedral mesh colored by material zones assigned above
 It is important to note that many pre- and post-processing tools have been developed to assign properities, query data, and assign inital conditions. As part of North Pond simulations [(Price et al., 2022)](https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2021JB023158) we converted elements in the mesh from hexahedral to tetrahedral to allow use of pre- and post-processors developed for use with earlier simulations [which can be found at this GitHub repository](https://github.com/UCSC-Hydrogeology/fehmToolkit).
 
 the Since we started with a rectangular mesh but have refined our mesh to represent a topographic surface, we will remove any elements we do not want to simulation. In the above step, we set Zone 5 to represent this area of the mesh outside the area of interest.
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -69,11 +72,13 @@ the Since we started with a rectangular mesh but have refined our mesh to repres
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 2
 General case hexahedral mesh with removal of elements outside the area of interest (top zone)
 
-### Reset top zone of domain 
+### Reset top zone of domain
 The final step is to correctly assign zones that represent the top, bottom, and side of the mesh. Since we removed the what was the top of the mesh in the previous step to reveal the refined topographic surface below, all the elements that were assigned as the top boundary no longer exist. We redefine the top zone of the mesh as elements belonging to the top zone and any material zone greater than one.
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -81,10 +86,12 @@ The final step is to correctly assign zones that represent the top, bottom, and 
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 3
 General case tetrahedral mesh with top material zone correctly defined with slice taken out at x,y = 0,0
 
 ## North Pond
+
 | **Filename** | **Input** | **Output** |
 | --- | --- | --- |
 *11_region_set.lgi*|*8_hex_refine_octree.inp*|*11_hex_refine_octree.inp*|
@@ -136,6 +143,7 @@ However, these zones must be set in the correct order because any subsquent assi
 9. Zone 8
 10. Zone 9
 11. Zone 10
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -143,6 +151,7 @@ However, these zones must be set in the correct order because any subsquent assi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 4
 North Pond hexahedral mesh with material zones defined. 4x vertical exaggeration.
 
@@ -152,13 +161,15 @@ North Pond hexahedral mesh with material zones defined. 4x vertical exaggeration
 |||*12_tmp_tet_interp.inp*|
 
 ### Convert to tetrahedral mesh and remove excess simulation domain
-As stated above, the first step is to convert the elements in the mesh from hexahedral  to a tetrahedral for use with legacy tools. 
+As stated above, the first step is to convert the elements in the mesh from hexahedral  to a tetrahedral for use with legacy tools.
 
 Since we started with a rectangular mesh but have refined our mesh to represent a topographic surface, we will remove any elements we do not want to simulation. In the above step, we set Zone 11 to represent this area of the mesh outside the area of interest.
+
 ### Syntax
 ```
 lagrit < 12_remove_top.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -166,6 +177,7 @@ lagrit < 12_remove_top.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 5
 North Pond hexahedral mesh with top zone being removed. 4x vertical exaggeration.
 
@@ -175,13 +187,14 @@ North Pond hexahedral mesh with top zone being removed. 4x vertical exaggeration
 ||*{fehm.files}*|
 
 
-### Reset top zone of domain 
+### Reset top zone of domain
 The final step is to correctly assign zones that represent the top, bottom, and side of the mesh. Since we removed the what was the top of the mesh in the previous step to reveal the refined topographic surface below, all the elements that were assigned as the top boundary no longer exist. We redefine the top zone of the mesh as elements belonging to the top zone and any material zone greater than one. Additionally, we export files used in [Finite Element Heat and Mass Transfer Code (FEHM)](https://fehm.lanl.gov/).
 
 ### Syntax
 ```
 lagrit < 13_top_region_set.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -189,9 +202,11 @@ lagrit < 13_top_region_set.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 6
 North Pond tetrahedral mesh with top region set. 4x vertical exaggeration.
 
 ## Conclusion
-This concludes the walkthrough portion of the tutorial. The next pages will cover the final geolgic meshes, pseudo code for both cases and an [executable roadmap for each case](http://adamnicholasprice.github.io/GeologicGriddingTutorial/08_executeScripts.html). 
+This concludes the walkthrough portion of the tutorial. The next pages will cover the final geologic meshes, pseudo code for both cases and an [executable roadmap for each case](http://adamnicholasprice.github.io/GeologicGriddingTutorial/08_executeScripts.html).
+
 [Constructing and refining domain](http://adamnicholasprice.github.io/GeologicGriddingTutorial/03_domain.html){: .btn .btn-purple } [Final Mesh](http://adamnicholasprice.github.io/GeologicGriddingTutorial/05_finalMesh.html){: .btn .btn-purple }

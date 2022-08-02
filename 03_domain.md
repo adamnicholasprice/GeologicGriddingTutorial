@@ -37,6 +37,7 @@ For the general case, a rectangular mesh with dimensions 10km x 10km x 5km compr
 ```
 lagrit < 2_refine_domain.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -44,8 +45,10 @@ lagrit < 2_refine_domain.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 1
 Inital general case hexahedral mesh
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/GeneralScene/";
@@ -53,6 +56,7 @@ Inital general case hexahedral mesh
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 2
 General domain slice at x=0, showing levels of refinement in areas of interest.
 
@@ -89,6 +93,7 @@ For North Pond, a rectangular mesh with 40km x 90km x 7.5km comprised of hexahed
 ```
 lagrit < 8_driver_high_resolution_clipped.lgi
 ```
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -96,8 +101,10 @@ lagrit < 8_driver_high_resolution_clipped.lgi
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 4
 Inital North Pond hexahedral mesh
+
 <script>
     var app = "https://kitware.github.io/paraview-glance/app";
     var datadir = "https://raw.githubusercontent.com/adamnicholasprice/GeologicGriddingTutorial/main/NorthPondScene/";
@@ -105,10 +112,12 @@ Inital North Pond hexahedral mesh
 
     document.write("<iframe src='" + app + "?name=" + file + "&url=" +datadir + file + "' id='iframe' width='800' height='500'></iframe>");
 </script>
+
 #### Figure 5
 Refined North Pond mesh subset at x = -6000m, colored by cell refinement level.
 
 ## Conclusion
 
 Now that we have a mesh that has the correct resolutions in the near- and far-feild, we will move on to defining material zones.
+
 [Constructing refining surfaces](http://adamnicholasprice.github.io/GeologicGriddingTutorial/02_surfaces.html){: .btn .btn-purple } [Define regions and assign materials](http://adamnicholasprice.github.io/GeologicGriddingTutorial/04_defineRegions.html){: .btn .btn-purple }
